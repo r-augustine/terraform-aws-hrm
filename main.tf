@@ -5,7 +5,7 @@ resource "aws_codecommit_repository" "hrm" {
 }
 
 # Create a Service Role
-resource "aws_iam_policy_document" "assume_role" {
+data "aws_iam_policy_document" "assume_role" {
   statement {
     effect  = "Allow"
     actions = ["sts:AssumeRole"]
@@ -63,16 +63,16 @@ resource "aws_amplify_app" "hrm_app" {
 
 # Add development branch
 resource "aws_amplify_branch" "dev" {
-    app_id = aws_amplify_app.hrm_app.id
-    branch_name = "dev"
-    framework = "React"
-    stage = "development"
+  app_id      = aws_amplify_app.hrm_app.id
+  branch_name = "dev"
+  framework   = "React"
+  stage       = "development"
 }
 
 # Add main branch
 resource "aws_amplify_branch" "main" {
-    app_id = aws_amplify_app.hrm_app.id
-    branch_name = "main"
-    framework = "React"
-    stage = "production"
+  app_id      = aws_amplify_app.hrm_app.id
+  branch_name = "main"
+  framework   = "React"
+  stage       = "production"
 }
