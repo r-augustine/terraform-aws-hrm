@@ -1,5 +1,5 @@
 # Setup  aws provider
 provider "aws" {
-  region   = "us-east-1"
+  region   = var.region
   role_arn = var.role_arn
 }
