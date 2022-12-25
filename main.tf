@@ -66,7 +66,7 @@ resource "aws_amplify_branch" "dev" {
   app_id      = aws_amplify_app.hrm_app.id
   branch_name = "dev"
   framework   = "React"
-  stage       = "development"
+  stage       = "DEVELOPMENT"
 }
 
 # Add main branch
@@ -74,5 +74,5 @@ resource "aws_amplify_branch" "main" {
   app_id      = aws_amplify_app.hrm_app.id
   branch_name = "main"
   framework   = "React"
-  stage       = "production"
+  stage       = "PRODUCTION"
 }
