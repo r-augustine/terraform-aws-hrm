@@ -19,7 +19,7 @@ data "aws_iam_policy_document" "assume_role" {
 # IAM role providing read-only access to CodeCommit
 resource "aws_iam_role" "amplify_codecommit" {
   name                = "AmplifyCodeCommit"
-  assume_role_policy  = join(aws_iam_policy_document.assume_role.*.json)
+  assume_role_policy  = join(data.aws_iam_policy_document.assume_role.*.json)
   managed_policy_arns = ["arn:aws:iam::aws:policy/AWSCodeCommitReadOnly"]
 }
 
