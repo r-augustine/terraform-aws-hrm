@@ -32,9 +32,9 @@ resource "aws_amplify_app" "hrm-app" {
   }
 }
 
-resource "aws_amplify_branch" "develop" {
+resource "aws_amplify_branch" "dev" {
   app_id      = aws_amplify_app.hrm-app.id
-  branch_name = "develop"
+  branch_name = "dev"
   framework = "React"
   stage     = "DEVELOPMENT"
 }
